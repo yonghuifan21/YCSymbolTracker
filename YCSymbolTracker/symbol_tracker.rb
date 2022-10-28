@@ -5,11 +5,11 @@
 #   Created by ycpeng on 2020/6/11.
 #   Copyright © 2020 ycpeng. All rights reserved.
 
-def symbol_tracker(installer)
+def symbol_tracker(installer, exceptions)
     pods_project = installer.pods_project
     name = 'YCSymbolTracker'
     symbol_tracker_target = pods_project.targets.find { |t| t.name == name }
-    if !symbol_tracker_target.nil?
+    if !symbol_tracker_target.nil? and !exceptions.include?(name)
         pods_target_config(pods_project, name, symbol_tracker_target)
     end
 end
