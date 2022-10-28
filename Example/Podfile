@@ -9,5 +9,5 @@ end
 
 post_install do |installer|
     require '../YCSymbolTracker/symbol_tracker.rb'
-    symbol_tracker(installer)
+    symbol_tracker(installer, [])
 end
